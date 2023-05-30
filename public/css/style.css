@@ -1,0 +1,29 @@
+.side-navbar{
+    padding: 10px;
+}
+li{margin: 8px;}
+li a:hover{
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+.mobile_nav{display: none;}
+.help_sec{
+    background-image: url(bg.png);
+    
+}
+.search{ width: fit-content;}
+.main_containe{
+    position: absolute;
+    right: 0;
+}
+tr:hover{
+    background-color: #f2f2f2;
+}
+@media (max-width:767px){
+    .side-navbar{
+        display: none;
+    }
+    .mobile_nav{  
+        display: block;
+    }
+}
