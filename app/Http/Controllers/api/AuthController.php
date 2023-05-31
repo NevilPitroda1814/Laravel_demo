@@ -41,7 +41,6 @@ class AuthController extends Controller
             'password'=>'required',
         ]);
        
-
         $user = User::where('email', $request['email'])->first();
         if ($user) {
             if (!Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
