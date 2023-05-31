@@ -15,7 +15,6 @@ class Product extends Model
     protected $fillable = ['pro_name','category_id','detail','image','status','created_at','updated_at'];
 
     public function category(){
-
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
 }

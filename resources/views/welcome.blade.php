@@ -13,7 +13,7 @@
     <style>
         li:hover{border-bottom:2px solid black;}
         header{
-            background-image: url('man.jpg');
+            background-image: url('image/man.jpg');
             background-repeat:none;
             background-size:cover;
             height: 600px;
