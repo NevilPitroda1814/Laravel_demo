@@ -25,6 +25,13 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top p-0">
             <div class="container-fluid">
+
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </button>
+
                 <a class="navbar-brand fs-2 fw-bold mx-5" href="{{ url('/') }}">
 
                     {{ config('app.name', 'Laravel_Demo') }}
@@ -32,8 +39,6 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                
 
                 <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -57,86 +62,6 @@
                                 </li>
                             @endif
                         @else
-                            <div class="mobile_nav">
-                                <ul class="nav d-block">
-                                    <li class="list-item dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                                            <span class="p-3 text-black">Home</span>
-                                        </a>
-                                        <ul class="subnav dropdown-menu text-dark">
-                                            <li><a href="{{ url('home') }}" class="text-decoration-none p-2 text-dark">Dashboard 1</a></li>
-                                            <li><a href="{{ url('product') }}" class="text-decoration-none p-2 text-dark">Product</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="list-item dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                                            <span class="p-3 text-black">Widgets</span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> General</a></li>
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> Chart</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="list-item dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                                            <span class="p-3 text-black">Page Layout</span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> Boxed</a></li>
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> RTL</a></li>
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> Dark</a></li>
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> Hide nav</a></li>
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> Footer Light</a></li>
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> Footer Dark</a></li>
-                                            <li><a href="#" class="text-decoration-none p-2 text-dark"><b>-</b> Footer Fixed</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="list-item dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                                            </svg>
-                                            <span class="p-3 fs-6 fw-bold text-black">User</span>
-                                        </a>
-                                        <ul class="subnav dropdown-menu list-unstyled text-dark">
-                                            <li class="list-item">
-                                                <a href="{{ route('register') }}" class="nav-link">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-                                                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                                                    </svg>
-                                                    <span class="p-3 fs-6 text-black">{{ __('Register') }}</span>
-                                                </a>
-                                            </li>
-
-                                            <li class="list-item">
-                                                <a href="{{ route('login') }}" class="nav-link">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-                                                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                                                    </svg>
-                                                    <span class="p-3 fs-6 text-black">{{ __('Login') }}</span>
-                                                </a>
-                                            </li>
-                                    
-                                            <li class="list-item">
-                                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();"
-                                                    class="nav-link">
-                                                        <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
-                                                            <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-                                                        </svg>
-                                                        <span class="p-3 fs-6 text-black">{{ __('Logout') }}</span>
-                                                </a>
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                    @csrf
-                                                </form>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
                             <li class="nav-item"><a href="{{ url('home') }}" class="nav-link fw-bold fs-5 m-1">Home</a></li>
                             <li class="nav-item"><a class="nav-link fw-bold fs-5 m-1" href="{{ url('product') }}">Product</a></li>
 
@@ -179,93 +104,102 @@
         <main class="py-4">
             <div class="container-fluid row">
                 @if ((Route::current()->uri() != 'login')&&(Route::current()->uri() != 'register'))
-                <nav class="side-navbar col-sm-2 mt-3 bg-white position-fixed" style="height:100%;">
-                    <ul class="nav d-block">
-                        <li class="list-item">
-                            <a href="#" class="nav-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-house" viewBox="0 0 16 16">
-                                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
-                                </svg>
-                                <span class="p-3 fs-6 fw-bold text-black">Dashboard</span>
-                            </a>
-                            <ul class="subnav text-dark">
-                                <li><a href="{{ url('home') }}" class="text-decoration-none p-2 text-dark">Home</a></li>
-                                <li><a href="{{ url('product') }}" class="text-decoration-none p-2 text-dark">Product</a></li>  
-                                <li><a href="{{ url('category') }}" class="text-decoration-none p-2 text-dark">Category</a></li>  
-                            </ul>
-                        </li>
-                        <li class="list-item">
-                            <a href="#" class="nav-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-box" viewBox="0 0 16 16">
-                                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
-                                </svg>
-                                <span class="p-3 fs-6 fw-bold text-black">Widgets</span>
-                            </a>
-                            <ul class="subnav text-dark">
-                                <li><a href="#" class="text-decoration-none p-2 text-dark">General</a></li>
-                                <li><a href="#" class="text-decoration-none p-2 text-dark">Chart</a></li>
-                            </ul>
-                        </li>
-                        <li class="list-item">
-                            <a href="#" class="nav-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-card-checklist" viewBox="0 0 16 16">
-                                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                                    <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
-                                </svg>
-                                <span class="p-3 fs-6 fw-bold text-black">Page Layout</span>
-                            </a>
-                            <ul class="subnav text-dark">
-                                <li><a href="#" class="text-decoration-none p-2 text-dark">Boxed</a></li>
-                                <li><a href="#" class="text-decoration-none p-2 text-dark">RTL</a></li>
-                                <li><a href="#" class="text-decoration-none p-2 text-dark">Dark</a></li>
-                            </ul>
-                        </li>
-                        <li class="list-item">
-                            <a href="#" class="nav-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-                                </svg>
-                                <span class="p-3 fs-6 fw-bold text-black">User</span>
-                            </a>
-                            <ul class="subnav  list-unstyled text-dark">
-                                <li class="list-item">
-                                    <a href="{{ route('register') }}" class="nav-link">
-                                        <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-                                            <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                                        </svg>
-                                        <span class="p-3 fs-6 text-black">{{ __('Register') }}</span>
-                                    </a>
-                                </li>
-
-                                <li class="list-item">
-                                    <a href="{{ route('login') }}" class="nav-link">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-                                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                                        </svg>
-                                        <span class="p-3 fs-6 text-black">{{ __('Login') }}</span>
-                                    </a>
-                                </li>
-                        
-                                <li class="list-item">
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"
-                                        class="nav-link">
-                                            <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
-                                                <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+               <!-- Side NavBar -->
+                <div class="offcanvas offcanvas-start bg-light" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header p-1">
+                        <a class="navbar-brand fs-2 fw-bold" href="{{ url('/') }}">
+                            {{ config('app.name', 'Laravel_Demo') }}
+                        </a>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="nav d-block p-0 m-0">
+                            <li class="list-item">
+                                <a href="#" class="nav-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-house" viewBox="0 0 16 16">
+                                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                                    </svg>
+                                    <span class="p-3 fs-6 fw-bold text-black">Dashboard</span>
+                                </a>
+                                <ul class="subnav text-dark">
+                                    <li><a href="{{ url('home') }}" class="text-decoration-none p-2 text-dark">Home</a></li>
+                                    <li><a href="{{ url('product') }}" class="text-decoration-none p-2 text-dark">Product</a></li>  
+                                    <li><a href="{{ url('category') }}" class="text-decoration-none p-2 text-dark">Category</a></li>  
+                                </ul>
+                            </li>
+                            <li class="list-item">
+                                <a href="#" class="nav-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-box" viewBox="0 0 16 16">
+                                        <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                                    </svg>
+                                    <span class="p-3 fs-6 fw-bold text-black">Widgets</span>
+                                </a>
+                                <ul class="subnav text-dark">
+                                    <li><a href="#" class="text-decoration-none p-2 text-dark">General</a></li>
+                                    <li><a href="#" class="text-decoration-none p-2 text-dark">Chart</a></li>
+                                </ul>
+                            </li>
+                            <li class="list-item">
+                                <a href="#" class="nav-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                        <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                                    </svg>
+                                    <span class="p-3 fs-6 fw-bold text-black">Page Layout</span>
+                                </a>
+                                <ul class="subnav text-dark">
+                                    <li><a href="#" class="text-decoration-none p-2 text-dark">Boxed</a></li>
+                                    <li><a href="#" class="text-decoration-none p-2 text-dark">RTL</a></li>
+                                    <li><a href="#" class="text-decoration-none p-2 text-dark">Dark</a></li>
+                                </ul>
+                            </li>
+                            <li class="list-item">
+                                <a href="#" class="nav-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                    </svg>
+                                    <span class="p-3 fs-6 fw-bold text-black">User</span>
+                                </a>
+                                <ul class="subnav  list-unstyled text-dark">
+                                    <li class="list-item">
+                                        <a href="{{ route('register') }}" class="nav-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                                                <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                                             </svg>
-                                            <span class="p-3 fs-6 text-black">{{ __('Logout') }}</span>
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                                            <span class="p-3 fs-6 text-black">{{ __('Register') }}</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="list-item">
+                                        <a href="{{ route('login') }}" class="nav-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                            </svg>
+                                            <span class="p-3 fs-6 text-black">{{ __('Login') }}</span>
+                                        </a>
+                                    </li>
+                            
+                                    <li class="list-item">
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"
+                                            class="nav-link">
+                                                <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="#6362e7" class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"/>
+                                                    <path fill-rule="evenodd" d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+                                                </svg>
+                                                <span class="p-3 fs-6 text-black">{{ __('Logout') }}</span>
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 @endif
                 @yield('content')
             </div>
