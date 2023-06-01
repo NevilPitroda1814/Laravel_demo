@@ -7,10 +7,6 @@ li a:hover{
     background-image: url(bg.png);
 }
 .search{ width: fit-content;}
-.main_containe{
-    position: absolute;
-    right: 0;
-}
 tr:hover{
     background-color: #f2f2f2;
 }

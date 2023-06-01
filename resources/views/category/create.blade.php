@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container-fluid  main_containe col-sm-10">
+<div class="container-fluid m-3">
     <div class="card border-primary m-5">
         <div class="card-header bg-primary">
             <h3 class="fw-bold text-white">Form</h3>

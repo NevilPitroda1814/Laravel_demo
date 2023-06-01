@@ -7,7 +7,7 @@
 @section('content')
    
         <!-- Main Container-->
-        <div class="container-fluid mt-5 main_containe col-sm-10">
+        <div class="container-fluid mt-5">
         @if ($message = Session::get('status'))
             <div class="alert alert-success">
                 <p class="text-success fw-bold">{{ $message }}</p>
