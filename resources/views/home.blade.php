@@ -4,7 +4,7 @@
         <div class="container-fluid main_containe mt-5 ">
             
             <!-- header text -->
-            <div class="header row m-2">
+            <div class="header row ms-4 mt-3">
                 <h3 class="col-sm-8 fw-bold ">Ecommerce</h3>
                 <div class="col-sm-4 d-flex p-2 text-primary">
                     <svg class="mb-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#336efd" class="bi bi-house" viewBox="0 0 16 16">

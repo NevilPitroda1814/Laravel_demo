@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top p-0">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow fixed-top p-0">
             <div class="container-fluid">
 
                 <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -105,7 +105,7 @@
             <div class="container-fluid row">
                 @if ((Route::current()->uri() != 'login')&&(Route::current()->uri() != 'register'))
                <!-- Side NavBar -->
-                <div class="offcanvas offcanvas-start bg-light" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas offcanvas-start bg-light" style="width:max-content;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header p-1">
                         <a class="navbar-brand fs-2 fw-bold" href="{{ url('/') }}">
                             {{ config('app.name', 'Laravel_Demo') }}
