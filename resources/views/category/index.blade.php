@@ -24,8 +24,18 @@
 </style>
 
 <script>
-$(document).on('click','.delete_btn',(function(){
+$(document).ready(function(){
+    $(document).ajaxStart(function(){
+        $("#wait").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+      $("#wait").css("display", "none");
+    });
+    $(document).on('click','.delete_btn',(function(){
     var id = $(this).data('id');
+    
+    $(".card").load();
+
     Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -60,7 +70,9 @@ $(document).on('click','.delete_btn',(function(){
                 }); 
             }
         });
-}));
+    }));
+});
+
 </script>
 @endsection('script')
 @section('content')
@@ -125,6 +137,9 @@ $(document).on('click','.delete_btn',(function(){
                 <button class="btn btn-outline-primary fs-6 fw-bold">Add New</button>
             </a>
         </div>
+    </div>
+    <div id="wait" style="display:none;position:absolute;top:50%;left:50%;">
+        <img src='image/demo_wait.gif' width="64" height="64" /><br>
     </div>
 </div>
 @endsection
