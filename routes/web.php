@@ -24,3 +24,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/product',ProductController::class);
 Route::resource('/category',CategoryController::class);
+
+Route::delete('/delete_product/{id}',[ProductController::class,'destroy'])->name('delete_product');
+Route::delete('/delete_category/{id}',[CategoryController::class,'destroy'])->name('delete_category');

@@ -124,10 +124,20 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($product)
     {
-        $product->delete();
-        return redirect()->route('product.index')->with('status','Delete successfully');
+        $product = Product::find($product);
+        if (!empty($product)) {
+            $product->delete();
+            return response()->json([
+                'success'=> $product
+            ],200);
+        }
+        else{
+            return response()->json([
+                'error'=> 'not found'
+            ],404);
+        }
         
     }
 }
