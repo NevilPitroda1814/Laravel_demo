@@ -1,4 +1,49 @@
 @extends('layouts.app')
+@section('script')
+
+<style>
+    label.error{
+        color:#dc3545;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $(document).on('click','#submit',(function(e){
+
+        e.preventDefault();
+
+        var cat_name = $('#cat_name').val();
+        var sub_cat = $('#sub_cat').val();
+        var detail = $('#detail').val();
+        var image = $('#image').val();
+
+        $.ajaxSetup({headers:{"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")}});
+        $.ajax({
+            data:{
+                cat_name : cat_name,
+                sub_cat : sub_cat,
+                detail : detail,
+                image : image
+            },
+            url:"{{route('create_category')}}",
+            type:"post",
+            dataType:"json",
+            success: function(){
+                alert('Category Created Successfully');
+                window.location.href = "{{url('category')}}";
+            },
+            error: function(){
+                alert('Category Not created');
+                window.location.reload();
+            }
+        });
+    }));
+});
+
+</script>
+@endsection('script')
 @section('content')
 <div class="container-fluid m-3">
     <div class="card border-primary m-5">

@@ -25,5 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/product',ProductController::class);
 Route::resource('/category',CategoryController::class);
 
+Route::post('/create_product',[ProductController::class,'store'])->name('create_product');
+Route::post('/create_category',[CategoryController::class,'store'])->name('create_category');
+
 Route::delete('/delete_product/{id}',[ProductController::class,'destroy'])->name('delete_product');
 Route::delete('/delete_category/{id}',[CategoryController::class,'destroy'])->name('delete_category');

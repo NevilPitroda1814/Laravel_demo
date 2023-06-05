@@ -48,17 +48,27 @@ class ProductController extends Controller
             'image' => 'required'
         ]);
 
-        $image = $request->file('image');
-        $store = Storage::disk('public')->put('product',$request->file('image'));
-        $product = new Product();
-        $product->pro_name = $request->pro_name;
-        $product->category_id = $request->category;
-        $product->detail = $request->detail;
-        $product->status = $request->status;
-        $product->image = $store;
-        $product->save();
+        // echo "test" or die();
+        // $image = $request->file('image');
+        // $store = Storage::disk('public')->put('product',$request->file('image'));
+        // $product = new Product();
+        // $product->pro_name = $request->pro_name;
+        // $product->category_id = $request->category;
+        // $product->detail = $request->detail;
+        // $product->status = $request->status;
+        // $product->image = $request->image;
+        // $product->save();
 
-        return redirect('product')->with('status','store successfully');
+        Product::updateOrCreate([
+            'pro_name' => $request->pro_name,
+            'category_id' => $request->category,
+            'detail' => $request->detail,
+            'status' => $request->status,
+            'image' => $request->image
+        ]);
+
+        // return response()->json(['success'=>'Product saved successfully.'])->redirect('product.index')->with('status','store successfully');
+        // return redirect('product.index')->with('status','store successfully');
     }
 
     /**

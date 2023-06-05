@@ -1,4 +1,51 @@
 @extends('layouts.app')
+@section('script')
+
+<style>
+    label.error{
+        color:#dc3545;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $(document).on('click','#submit',(function(e){
+
+        e.preventDefault();
+
+        var pro_name = $('#pro_name').val();
+        var category = $('#category').val();
+        var detail = $('#detail').val();
+        var image = $('#image').val();
+        var status = $('.status').val();
+
+        $.ajaxSetup({headers:{"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")}});
+        $.ajax({
+            data:{
+                pro_name : pro_name,
+                category : category,
+                detail : detail,
+                image : image,
+                status : status
+            },
+            url:"{{route('create_product')}}",
+            type:"post",
+            dataType:"json",
+            success: function(){
+                alert('Product Created Successfully');
+                window.location.href = "{{url('product')}}";
+            },
+            error: function(){
+                alert('Product Not created');
+                window.location.reload();
+            }
+        });
+    }));
+});
+
+</script>
+@endsection('script')
 @section('content')
 <div class="container-fluid mt-5">
     <div class="card border-primary m-5">
@@ -6,13 +53,14 @@
             <h3 class="fw-bold text-white">Form</h3>
         </div>
         <div class="card-body">
-            @if($action == 'insert')
+            <!-- @if($action == 'insert')
             <form class="form row m-2" action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
             @else
             <form class="form row m-2" action="{{route('product.update',$product->id)}}" method="post" enctype="multipart/form-data">
-            @method('PUT')
-            @endif
-            @csrf
+            @method('PUT') -->
+            <!-- @endif
+            @csrf -->
+            <form class="form row m-2" id="product_create">
                 <div class="col-sm-12 mb-3">
                     <h3 class="fw-bold p-0 ">Product Form  : </h3>
                 </div>
@@ -50,12 +98,12 @@
                 </div>
                 <div class="col-sm-6 p-2">
                     <h5 class="fw-bold">Status : </h4>
-                    <input class="m-1" type="radio" name="status" id="status"  value="active"             
+                    <input class="status m-1" type="radio" name="status"  value="active"             
                     @if(!empty($product->status))
                         {{($product->status == 'active')?  'checked': ''}}
                     @endif>
                     <label class="fw-bold m-1"> Active </label>
-                    <input class="radio m-1" type="radio" name="status" id="status" value="deactive"
+                    <input class="status radio m-1" type="radio" name="status" value="deactive"
                     @if(!empty($product->status))
                         {{($product->status == 'deactive')?'checked':''}}
                     @endif>
@@ -65,7 +113,7 @@
                     @enderror
                 </div>
                 <div class="col-sm-12 p-2">
-                    <input class="btn btn-outline-primary fw-bold" type="submit" value="Submit" >
+                    <input class="btn btn-outline-primary fw-bold" id="submit"  type="button" value="Submit" >
                 </div>
             </form>
         </div>

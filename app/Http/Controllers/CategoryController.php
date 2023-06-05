@@ -44,15 +44,21 @@ class CategoryController extends Controller
             'image' => 'required'
         ]); 
 
-        $image = $request->file('image');
-        $store = Storage::disk('public')->put('category',$image);
-        $category = new Category();
-        $category->cat_name = $request->cat_name;
-        $category->sub_cat = $request->sub_cat;
-        $category->detail = $request->detail;
-        $category->image = $store;
-        $category->save();
-        return redirect('category')->with('status','store successfully');
+        // $image = $request->file('image');
+        // $store = Storage::disk('public')->put('category',$image);
+        // $category = new Category();
+        // $category->cat_name = $request->cat_name;
+        // $category->sub_cat = $request->sub_cat;
+        // $category->detail = $request->detail;
+        // $category->image = $store;
+        // $category->save();
+        // return redirect('category')->with('status','store successfully');
+        Category::updateOrCreate([
+            'cat_name' => $request->cat_name,
+            'sub_cat' => $request->sub_cat,
+            'detail' => $request->detail,
+            'image' => $request->image
+        ]);
     }
 
     /**
